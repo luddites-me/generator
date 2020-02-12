@@ -1,6 +1,7 @@
 'use strict';
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
+const { kebabCase } = require('lodash');
 const yosay = require('yosay');
 
 module.exports = class extends Generator {
@@ -13,6 +14,7 @@ module.exports = class extends Generator {
         name: 'platformName',
         message: "What is the name of the platform you're integrating with Protect?",
         default: this.config.get('platformName') || this.determineAppname(),
+        filter: kebabCase,
       },
       {
         type: 'confirm',
