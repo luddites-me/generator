@@ -1,3 +1,3 @@
 # Getting Started
 
-* Read the [docs](public/en/platform/getting-started.md)
+* Read the [docs](https://github.com/ns8inc/protect-platform-integration)
