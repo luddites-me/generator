@@ -4,30 +4,37 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 
 module.exports = class extends Generator {
-  prompting() {
-    // Have Yeoman greet the user.
-    this.log(yosay(`Welcome to the marvelous ${chalk.red('generator-protect-integration')} generator!`));
+  async prompting() {
+    this.log(yosay(`Welcome to the marvelous ${chalk.red('protect-integration')} generator!`));
 
     const prompts = [
       {
+        type: 'input',
+        name: 'platformName',
+        message: "What is the name of the platform you're integrating with Protect?",
+        default: this.config.get('platformName') || this.determineAppname(),
+      },
+      {
         type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true,
+        name: 'includePhp',
+        message: 'Do you want to create a PHP module for this integration?',
+        default: this.config.get('includePhp'),
       },
     ];
 
-    return this.prompt(prompts).then((props) => {
-      // To access props later use this.props.someAnswer;
-      this.props = props;
-    });
+    this.answers = await this.prompt(prompts);
+    this.config.set(this.answers);
+
+    this.composeWith(require.resolve('../switchboard'), this.answers);
+    if (this.answers.includePhp) {
+      this.composeWith(require.resolve('../php-module'), this.answers);
+    }
   }
 
   writing() {
-    this.fs.copy(this.templatePath('switchboard'), this.destinationPath('switchboard'));
-  }
-
-  install() {
-    this.installDependencies();
+    this.config.save();
+    this.fs.copyTpl(this.templatePath('./.*'), this.destinationPath('./'), this.answers);
+    this.fs.copyTpl(this.templatePath('./*.*'), this.destinationPath('./'), this.answers);
+    this.fs.copyTpl(this.templatePath('ci'), this.destinationPath('ci'), this.answers);
   }
 };

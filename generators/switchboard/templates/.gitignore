@@ -1,0 +1,13 @@
+.awcache/
+.env
+.idea/
+.nyc_output/
+.serverless/
+.tmp/
+*.log
+*.tgz
+coverage/
+dist/
+node_modules/
+package-lock.json
+test/mock_data/

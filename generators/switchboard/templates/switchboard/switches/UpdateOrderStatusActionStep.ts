@@ -3,16 +3,17 @@ import { NamedOrderUpdate } from 'ns8-switchboard-interfaces';
 import { SwitchContext } from 'ns8-switchboard-interfaces';
 import { UpdateOrderStatusActionSwitch } from 'ns8-switchboard-interfaces';
 import { OrderUpdate } from 'ns8-protect-models';
-import { OrderUpdateHelper } from '../lib/OrderUpdateHelper';
+
+const convertOrder = (switchContext: SwitchContext): NamedOrderUpdate => {
+  throw new Error(`not implemented ${switchContext}`);
+};
 
 /**
  * This is the stateless function that will execute the actual Magento switch logic.
  */
 export class UpdateOrderStatusActionStep implements UpdateOrderStatusActionSwitch {
-  // eslint-disable-next-line class-methods-use-this
   async update(switchContext: SwitchContext): Promise<NamedOrderUpdate> {
-    const converter = new OrderUpdateHelper(switchContext);
-    return converter.processOrderUpdateAction();
+    return convertOrder(switchContext);
   }
 }
 

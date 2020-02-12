@@ -1,0 +1,31 @@
+{
+  "awesomeTypescriptLoaderOptions": {
+    "isolatedModules": true,
+    "reportFiles": [
+      "switchboard/**/*.{ts,tsx}"
+    ],
+    "useCache": true
+  },
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "noLib": false,
+    "removeComments": false,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2019",
+    "types": [
+      "mocha",
+      "node"
+    ]
+  },
+  "include": [
+    "switchboard/**/*"
+  ]
+}

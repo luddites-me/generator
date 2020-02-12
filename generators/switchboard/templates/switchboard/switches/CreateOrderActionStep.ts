@@ -2,16 +2,18 @@ import { CreateOrderActionOperator } from '@ns8/ns8-switchboard-operator';
 import { CreateOrderActionSwitch } from 'ns8-switchboard-interfaces';
 import { SwitchContext } from 'ns8-switchboard-interfaces';
 import { Order } from 'ns8-protect-models';
-import { OrderHelper } from '../lib/OrderHelper';
+
+const convertOrder = (switchContext: SwitchContext): Order => {
+  throw new Error(`not implemented ${switchContext}`);
+};
 
 /**
- * This is the stateless function that will execute the actual Magento switch logic.
+ * This is the stateless function that will execute the actual <%- platformName %> switch logic.
  */
 export class CreateOrderActionStep implements CreateOrderActionSwitch {
   // eslint-disable-next-line class-methods-use-this
   async create(switchContext: SwitchContext): Promise<Order> {
-    const converter = new OrderHelper(switchContext);
-    return converter.createProtectOrder();
+    return convertOrder(switchContext);
   }
 }
 

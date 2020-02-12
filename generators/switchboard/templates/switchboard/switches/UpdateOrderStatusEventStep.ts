@@ -3,7 +3,10 @@ import { EventSwitch } from 'ns8-switchboard-interfaces';
 import { NamedOrderUpdate } from 'ns8-switchboard-interfaces';
 import { SwitchContext } from 'ns8-switchboard-interfaces';
 import { OrderUpdate } from 'ns8-protect-models';
-import { OrderUpdateHelper } from '../lib/OrderUpdateHelper';
+
+const convertOrder = (switchContext: SwitchContext): NamedOrderUpdate => {
+  throw new Error(`not implemented ${switchContext}`);
+};
 
 /**
  * This is the stateless function that will execute the actual Magento switch logic.
@@ -11,8 +14,7 @@ import { OrderUpdateHelper } from '../lib/OrderUpdateHelper';
 export class UpdateOrderStatusEventStep implements EventSwitch {
   // eslint-disable-next-line class-methods-use-this
   async handle(switchContext: SwitchContext): Promise<NamedOrderUpdate> {
-    const converter = new OrderUpdateHelper(switchContext);
-    return converter.processOrderUpdateEvent();
+    return convertOrder(switchContext);
   }
 }
 
