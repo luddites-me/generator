@@ -9,8 +9,24 @@ module.exports = class extends Generator {
     this.option('platformName', { type: String, required: true });
   }
 
+  _updateEditorConfig() {
+    const edConfPath = this.destinationPath('.editorconfig');
+    const currentEdConfig = this.fs.read(edConfPath);
+    if (currentEdConfig.match(/\[\*\.php\]/) !== null) {
+      return;
+    }
+
+    const phpEdConf = this.fs.read(this.templatePath('.editorconfig'));
+    this.fs.write(edConfPath, `${currentEdConfig}\n${phpEdConf}`);
+  }
+
   writing() {
-    this.fs.copyTpl(this.templatePath('./*.*'), this.destinationPath(MODULE_DIR), this.options);
+    this.fs.copyTpl(
+      this.templatePath('./composer.json'),
+      this.destinationPath(MODULE_DIR, './composer.json'),
+      this.options,
+    );
+    this._updateEditorConfig();
   }
 
   install() {
