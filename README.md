@@ -20,7 +20,7 @@ mkdir my-new-integration; cd my-new-integration/
 Then generate your new project:
 
 ```bash
-yo protect-integration
+yo @ns8/protect-integration
 ```
 
 ## License

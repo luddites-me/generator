@@ -1,10 +1,13 @@
 {
   "author": "ns8inc",
-  "dependencies": {},
+  "dependencies": {
+    "@ns8/ns8-switchboard-operator": "1.0.121",
+    "ns8-protect-models": "1.0.227",
+    "ns8-switchboard-interfaces": "1.0.98"
+  },
   "description": "<%- platformName %> integration project",
   "devDependencies": {
     "@ns8/ns8-protect-sdk": "0.1.26",
-    "@ns8/ns8-switchboard-operator": "1.0.121",
     "@types/archiver": "3.0.0",
     "@types/aws-lambda": "8.10.40",
     "@types/chai": "4.2.7",
@@ -31,8 +34,6 @@
     "eslint-plugin-tsdoc": "0.2.1",
     "hard-source-webpack-plugin": "0.13.1",
     "mocha": "7.0.1",
-    "ns8-protect-models": "1.0.227",
-    "ns8-switchboard-interfaces": "1.0.98",
     "nyc": "15.0.0",
     "prettier": "1.19.1",
     "scp2": "0.5.0",
@@ -43,11 +44,8 @@
     "ts-mocha": "6.0.0",
     "ts-node": "8.6.2",
     "typescript": "3.7.5",
-    "url": "0.11.0",
-    "uuid": "3.4.0",
     "webpack": "4.41.5",
     "webpack-cli": "3.3.10",
-    "webpack-dev-server": "3.10.1",
     "webpack-merge": "4.2.2"
   },
   "files": [
@@ -58,27 +56,24 @@
   "name": "@ns8/<%- platformName %>-platform",
   "private": true,
   "scripts": {
-    "beautify": "ts-node --skip-project ./build/projectBuild.ts",
-    "build": "yarn && yarn generate:exports && yarn beautify && yarn bundle && yarn module:config",
-    "build:dev": "NODE_ENV=dev tsc -d --sourceMap && yarn build",
-    "build:prod": "NODE_ENV=prod tsc -d && yarn build",
+    "beautify": "yarn ts-node ./build/projectBuild.ts",
+    "build": "yarn && yarn generate:exports && yarn beautify && tsc --emitDeclarationOnly && yarn bundle",
+    "build:dev": "NODE_ENV=dev yarn build",
+    "build:prod": "NODE_ENV=prod yarn build",
     "bundle": "webpack",
-    "clean": "rm -rf .awcache .tmp dist .serverless",
-    "deploy": "METHOD=deploy && ts-node --skip-project ./build/lambdaDeploy.ts",
+    "clean": "rm -rf .awcache dist .serverless",
+    "deploy": "METHOD=deploy && yarn ts-node ./build/lambdaDeploy.ts",
     "generate:exports": "yarn cti create ./switchboard -w",
     "lint": "eslint --ext=ts switchboard",
     "lint:fix": "yarn lint --fix",
-    "module:build": "cd module && composer install",
-    "module:deploy": "yarn module:config && ts-node --skip-project ./build/moduleDeploy.ts",
-    "module:release": "NODE_ENV=prod && yarn module:config && ts-node --skip-project ./build/moduleRelease.ts",
     "rebuild": "yarn clean && yarn build",
     "rebuild:dev": "yarn clean && yarn build:dev",
-    "test": "yarn build && nyc mocha 'test/**/*Test.ts'",
+    "test": "nyc mocha 'test/**/*Test.ts'",
     "test:debug": "mocha -r ts-node/register 'test/**/*Test.ts'",
-    "undeploy": "METHOD=remove && ts-node --skip-project ./build/lambdaDeploy.ts",
-    "version:patch": "ts-node --skip-project ./build/incrementVersion.ts && yarn publish && yarn build",
-    "version:patch:dev": "PATCH_MODE=dev && yarn version:patch",
-    "version:publish": "yarn && yarn build && npm publish"
+    "undeploy": "METHOD=remove yarn ts-node ./build/lambdaDeploy.ts",
+    "version:patch": "yarn ts-node ./build/incrementVersion.ts && yarn build && yarn publish",
+    "version:patch:dev": "PATCH_MODE=dev yarn version:patch"
   },
+  "types": "dist/types/index.d.ts",
   "version": "0.0.1"
 }

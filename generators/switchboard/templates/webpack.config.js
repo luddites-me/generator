@@ -1,7 +1,8 @@
 /* eslint-disable
   func-names,
   no-console,
-  global-require */
+  global-require,
+  @typescript-eslint/no-var-requires */
 const path = require('path');
 // This plugin can increase the performance of the build by caching and incrementally building
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
@@ -43,9 +44,7 @@ const config = {
       },
     ],
   },
-  plugins: [
-    new HardSourceWebpackPlugin(),
-  ],
+  plugins: [new HardSourceWebpackPlugin()],
   target: 'node',
   node: {
     __dirname: false,
