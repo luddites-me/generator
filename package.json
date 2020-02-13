@@ -43,7 +43,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
+      "eslint -c package.json --no-eslintrc --fix",
       "git add"
     ],
     "*.json": [
