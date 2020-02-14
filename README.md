@@ -23,6 +23,10 @@ Then generate your new project:
 yo @ns8/protect-integration
 ```
 
+## Development
+
+[Getting Started](public/en/platform/generator-protect-integration/getting-started.md)
+
 ## License
 
  © [ns8inc](https://ns8.com)
