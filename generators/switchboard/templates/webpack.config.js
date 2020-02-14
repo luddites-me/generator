@@ -32,6 +32,12 @@ const config = {
     modules: ['node_modules'],
   },
   devtool: 'source-map',
+  externals: {
+    'aws-sdk': {
+      commonjs: 'aws-sdk',
+      commonjs2: 'aws-sdk',
+    },
+  },
   module: {
     rules: [
       {
