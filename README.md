@@ -1,4 +1,4 @@
-# generator-protect-integration [![NPM version]][npm-url]
+# generator-protect-integration
 > Protect integration project generator
 
 ## Installation
@@ -30,5 +30,3 @@ yo @ns8/protect-integration
 ## License
 
  © [ns8inc](https://ns8.com)
-
-[npm-url]: https://npmjs.org/package/@ns8/generator-protect-integration
