@@ -15,11 +15,11 @@ const incrementVersion = (): void => {
   const patchMode: string = process.env.PATCH_MODE ? process.env.PATCH_MODE.trim().toLowerCase() : 'patch';
   const releaseType: ReleaseType = devSuffix !== 'none' && patchMode === 'dev' ? 'prerelease' : 'patch';
   const currentVersion: string = rootPackage.version;
-  const nextPackageVersion: string | null = inc(currentVersion, releaseType, false, devSuffix);
+  const nextPackageVersion: string | undefined = inc(currentVersion, releaseType, false, devSuffix);
   if (!nextPackageVersion) throw new Error('Could not increment package version');
 
   rootPackage.version = nextPackageVersion;
-  writeFileSync('package.json', JSON.stringify(rootPackage, null, 2));
+  writeFileSync('package.json', JSON.stringify(rootPackage, undefined, 2));
   console.log(`Updated ${rootPackage.name}@${currentVersion} to ${nextPackageVersion}`);
 };
 

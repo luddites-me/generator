@@ -1,11 +1,4 @@
 {
-  "awesomeTypescriptLoaderOptions": {
-    "isolatedModules": true,
-    "reportFiles": [
-      "switchboard/**/*.{ts,tsx}"
-    ],
-    "useCache": true
-  },
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "declaration": true,
@@ -20,12 +13,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "es2019",
-    "types": [
-      "mocha",
-      "node"
-    ]
+    "types": ["mocha", "node"]
   },
-  "include": [
-    "switchboard/**/*"
-  ]
+  "include": ["switchboard/**/*"]
 }

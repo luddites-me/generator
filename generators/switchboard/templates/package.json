@@ -1,14 +1,17 @@
 {
   "author": "ns8inc",
   "dependencies": {
-    "@ns8/ns8-switchboard-operator": "1.0.122",
-    "ns8-protect-models": "1.0.238",
-    "ns8-switchboard-interfaces": "1.0.100"
+    "@ns8/ns8-switchboard-operator": "1.0.126",
+    "@ns8/protect-sdk-switchboard": "0.2.8",
+    "@ns8/protect-tools-bundle": "0.0.9",
+    "@ns8/protect-tools-js": "0.0.6",
+    "ns8-protect-models": "1.0.250",
+    "ns8-switchboard-interfaces": "1.0.105"
   },
   "description": "<%- platformName %> integration project",
   "devDependencies": {
     "@ns8/ns8-protect-sdk": "0.1.26",
-    "@types/archiver": "3.0.0",
+    "@types/archiver": "3.1.0",
     "@types/aws-lambda": "8.10.40",
     "@types/chai": "4.2.7",
     "@types/chai-as-promised": "7.1.2",
