@@ -3,7 +3,7 @@ import { EventSwitch } from 'ns8-switchboard-interfaces';
 import { SwitchContext } from 'ns8-switchboard-interfaces';
 
 /**
- * This is the stateless function that will execute the actual Magento switch logic.
+ * This is the stateless function that will execute the actual <%- platformName %> switch logic.
  */
 export class OnInstallEventStep implements EventSwitch {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

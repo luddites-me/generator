@@ -9,9 +9,9 @@ const getPlatformOrder = (switchContext: SwitchContext): Promise<PlatformOrder> 
 };
 
 /**
- * This is the stateless function that will execute the actual Magento switch logic.
+ * This is the stateless function that will execute the actual <%- platformName %> switch logic.
  */
-export class UpdateEQ8ScoreEventStep implements EventSwitch {
+export class UpdateOrderRiskEventStep implements EventSwitch {
   // eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-explicit-any
   async handle(switchContext: SwitchContext): Promise<any> {
     const result = await getPlatformOrder(switchContext);
@@ -26,5 +26,5 @@ export class UpdateEQ8ScoreEventStep implements EventSwitch {
  * where this method name must match the corresponding method defined in `serverless.yml`
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const UpdateEQ8ScoreEvent: (event: any) => Promise<any> = ((): any =>
-  new EventOperator([new UpdateEQ8ScoreEventStep()]).handle)();
+export const UpdateOrderRiskEvent: (event: any) => Promise<any> = ((): any =>
+  new EventOperator([new UpdateOrderRiskEventStep()]).handle)();

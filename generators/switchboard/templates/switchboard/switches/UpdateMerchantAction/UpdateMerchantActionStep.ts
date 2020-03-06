@@ -8,7 +8,7 @@ const convertMerchant = (switchContext: SwitchContext): MerchantUpdate => {
 };
 
 /**
- * This is the stateless function that will execute the actual Magento switch logic.
+ * This is the stateless function that will execute the actual <%- platformName %> switch logic.
  */
 export class UpdateMerchantActionStep implements UpdateMerchantActionSwitch {
   async update(switchContext: SwitchContext): Promise<MerchantUpdate> {

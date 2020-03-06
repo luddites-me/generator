@@ -3,7 +3,7 @@ import { SwitchContext } from 'ns8-switchboard-interfaces';
 import { UninstallActionSwitch } from 'ns8-switchboard-interfaces';
 
 /**
- * This is the stateless function that will execute the actual Magento switch logic.
+ * This is the stateless function that will execute the actual <%- platformName %> switch logic.
  */
 export class UninstallActionStep implements UninstallActionSwitch {
   // eslint-disable-next-line class-methods-use-this, no-unused-vars, @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function

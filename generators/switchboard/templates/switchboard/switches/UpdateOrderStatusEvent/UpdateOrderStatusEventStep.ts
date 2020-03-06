@@ -1,7 +1,7 @@
-import { UpdateOrderStatusActionOperator } from '@ns8/ns8-switchboard-operator';
+import { EventOperator } from '@ns8/ns8-switchboard-operator';
+import { EventSwitch } from 'ns8-switchboard-interfaces';
 import { NamedOrderUpdate } from 'ns8-switchboard-interfaces';
 import { SwitchContext } from 'ns8-switchboard-interfaces';
-import { UpdateOrderStatusActionSwitch } from 'ns8-switchboard-interfaces';
 import { OrderUpdate } from 'ns8-protect-models';
 
 const convertOrder = (switchContext: SwitchContext): NamedOrderUpdate => {
@@ -9,10 +9,11 @@ const convertOrder = (switchContext: SwitchContext): NamedOrderUpdate => {
 };
 
 /**
- * This is the stateless function that will execute the actual Magento switch logic.
+ * This is the stateless function that will execute the actual <%- platformName %> switch logic.
  */
-export class UpdateOrderStatusActionStep implements UpdateOrderStatusActionSwitch {
-  async update(switchContext: SwitchContext): Promise<NamedOrderUpdate> {
+export class UpdateOrderStatusEventStep implements EventSwitch {
+  // eslint-disable-next-line class-methods-use-this
+  async handle(switchContext: SwitchContext): Promise<NamedOrderUpdate> {
     return convertOrder(switchContext);
   }
 }
@@ -23,5 +24,5 @@ export class UpdateOrderStatusActionStep implements UpdateOrderStatusActionSwitc
  * where this method name must match the corresponding method defined in `serverless.yml`
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const UpdateOrderStatusAction: (event: any) => Promise<OrderUpdate> = ((): any =>
-  new UpdateOrderStatusActionOperator([new UpdateOrderStatusActionStep()]).handle)();
+export const UpdateOrderStatusEvent: (event: any) => Promise<OrderUpdate> = ((): any =>
+  new EventOperator([new UpdateOrderStatusEventStep()]).handle)();
