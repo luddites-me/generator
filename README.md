@@ -29,4 +29,6 @@ yo @ns8/protect-integration
 
 ## License
 
+See [License](./LICENSE)
+
  © [ns8inc](https://ns8.com)
