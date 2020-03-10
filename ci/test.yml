@@ -1,0 +1,30 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source: { repository: node, tag: "12" }
+
+inputs:
+  - name: generator-protect-integration
+
+run:
+  path: /bin/sh
+  args:
+    - -c
+    - |
+
+      echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+
+      cd generator-protect-integration
+      if ! yarn install
+      then
+        echo "ERROR: yarn install failed"
+        exit 1
+      fi
+
+      if ! yarn test
+      then
+        echo "ERROR: yarn test failed"
+        exit 1
+      fi
