@@ -7,11 +7,11 @@
     "name": "ns8inc",
     "url": "https://ns8.com"
   },
-  "files": [ 
+  "files": [
     "generators"
   ],
   "main": "generators/index.js",
-  "keywords": [
+  "keywords": [ 
     "ns8",
     "protect",
     "yeoman-generator"
