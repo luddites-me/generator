@@ -50,7 +50,7 @@ run:
       fi
 
       # Get the latest version value and update info in GitHub
-      current_version=$(yarn info --json | jq -r '.["data"]["dist-tags"]["latest"]')
+      version_increment=$(yarn info --json | jq -r '.["data"]["dist-tags"]["latest"]')
       git push origin HEAD
       git tag -a $version_increment -m "Automatic version tag: $version_increment"
       git push origin $version_increment
