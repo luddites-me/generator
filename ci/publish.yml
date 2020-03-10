@@ -14,7 +14,6 @@ run:
       apt-get update
       apt-get -y install jq
 
-<<<<<<< HEAD
       mkdir ~/.ssh && chmod 700 ~/.ssh
       ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       echo "$SSH_KEY" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
@@ -22,8 +21,6 @@ run:
 
       echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 
-=======
->>>>>>> Adding initial CI pipeline tasks CH-19775
       cd generator-protect-integration-master
 
       # Ensure we are on the correct branch and not just the latest HEAD commit
