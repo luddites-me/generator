@@ -1,6 +1,9 @@
 # generator-protect-integration
 > Protect integration project generator
 
+[![CI](https://concourse.ns8-infrastructure.com/api/v1/teams/main/pipelines/generator-protect-integration/jobs/test/badge?title=tests)](https://concourse.ns8-infrastructure.com/api/v1/teams/main/pipelines/generator-protect-integration/jobs/test/badge)
+[![CI](https://concourse.ns8-infrastructure.com/api/v1/teams/main/pipelines/generator-protect-integration/jobs/test/badge?title=tests)](https://concourse.ns8-infrastructure.com/api/v1/teams/main/pipelines/generator-protect-integration/jobs/test/badge?title=tests)
+
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-protect-integration using [npm](https://www.npmjs.com/).
