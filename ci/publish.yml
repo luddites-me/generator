@@ -14,6 +14,8 @@ run:
       apt-get update
       apt-get -y install jq
 
+      echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+
       cd generator-protect-integration-master
 
       # Ensure we are on the correct branch and not just the latest HEAD commit
