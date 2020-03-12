@@ -24,7 +24,7 @@ run:
       cd generator-protect-integration-master
 
       # Ensure we are on the correct branch and not just the latest HEAD commit
-      git checkout ctdoriott/ch19775/add-concourse-builds-for-all-sdk-repos-missing-a-concourse-config
+      git checkout master
 
       git config --global user.email 'noreply@ns8.com'
       git config --global user.name 'Concourse CI'
