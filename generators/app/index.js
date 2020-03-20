@@ -35,7 +35,7 @@ module.exports = class extends Generator {
         {
           type: 'confirm',
           name: 'continue',
-          message: `Generator version: ${generatorVersion}, project version: ${version}. Do you want to continue?`,
+          message: `The current generator version is ${generatorVersion}, but your project was scaffolded with version ${version}. Do you want to continue?`,
         },
       ]);
 
