@@ -1,0 +1,9 @@
+{
+  "releases": {
+    "0.0.13": [
+      "Support for a changelog - releases include a key for the version and array of comments",
+      "Confirmation when running in a project that is behind the generator version",
+      "Version of the generator used is now added to the .yo-rc.json file"
+    ]
+  }
+}
