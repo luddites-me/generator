@@ -3,13 +3,13 @@ const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const { kebabCase } = require('lodash');
 const yosay = require('yosay');
-const cmp = require('semver-compare');
+const semverCmp = require('semver-compare');
 
 const generatorVersion = require('../../package.json').version;
 const releases = require('../../changelog.json').releases;
-const sortedVersions = Object.keys(releases).sort(cmp);
+const sortedVersions = Object.keys(releases).sort(semverCmp);
 
-const isVersionOld = (version) => version && cmp(version, generatorVersion) < 0;
+const isVersionOld = (version) => version && semverCmp(version, generatorVersion) < 0;
 
 const getChangelog = (projectVersion) => {
   const initialIndex = sortedVersions.indexOf(projectVersion);
@@ -35,7 +35,7 @@ module.exports = class extends Generator {
         {
           type: 'confirm',
           name: 'continue',
-          message: `Generator version: ${generatorVersion}, project version: ${version}. Are you sure you want to continue?`,
+          message: `Generator version: ${generatorVersion}, project version: ${version}. Do you want to continue?`,
         },
       ]);
 
