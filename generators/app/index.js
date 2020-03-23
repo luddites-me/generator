@@ -3,33 +3,21 @@ const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const { kebabCase } = require('lodash');
 const yosay = require('yosay');
-const semverCmp = require('semver-compare');
 
 const generatorVersion = require('../../package.json').version;
 const releases = require('../../changelog.json').releases;
-const sortedVersions = Object.keys(releases).sort(semverCmp);
-
-const isVersionOld = (version) => version && semverCmp(version, generatorVersion) < 0;
-
-const getChangelog = (projectVersion) => {
-  const initialIndex = sortedVersions.indexOf(projectVersion);
-  const sliceStart = initialIndex >= 0 ? initialIndex : 0;
-  const releaseList = sortedVersions
-    .slice(sliceStart)
-    .reverse() // Display the most recent changes first
-    .map((version) => `[${version}]\n${(releases[version] || []).join('\n')}\n`)
-    .join('\n');
-
-  return `\n~~Changelog~~\n${releaseList}`;
-};
+const Changelog = require('./changelog');
+const changelog = new Changelog(generatorVersion, releases);
 
 module.exports = class extends Generator {
   async prompting() {
     this.log(yosay(`Welcome to the marvelous ${chalk.red('protect-integration')} generator!`));
 
+    this.cancel = false;
+
     const version = this.config.get('version');
-    if (isVersionOld(version)) {
-      this.log(getChangelog(version));
+    if (changelog.isVersionOld(version)) {
+      this.log(changelog.getChangelog(version));
 
       const confirm = await this.prompt([
         {
@@ -40,10 +28,10 @@ module.exports = class extends Generator {
       ]);
 
       this.cancel = !confirm.continue;
+    }
 
-      if (this.cancel) {
-        return;
-      }
+    if (this.cancel) {
+      return;
     }
 
     const prompts = [
