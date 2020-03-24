@@ -1,62 +1,31 @@
 {
-  "name": "@ns8/generator-protect-integration",
-  "version": "0.0.12",
-  "description": "Protect integration project generator",
-  "homepage": "https://github.com/ns8inc/generator-protect-integration",
   "author": {
     "name": "ns8inc",
     "url": "https://ns8.com"
   },
-  "files": [
-    "generators"
-  ],
-  "main": "generators/index.js",
-  "keywords": [
-    "ns8",
-    "protect",
-    "yeoman-generator"
-  ],
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "lodash": "^4.17.15",
+    "semver-compare": "^1.0.0",
+    "yeoman-generator": "^4.7.2",
+    "yosay": "^2.0.2"
+  },
+  "description": "Protect integration project generator",
   "devDependencies": {
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.6.0",
-    "eslint-config-xo": "^0.27.2",
-    "eslint-plugin-prettier": "^3.1.1",
-    "husky": "^3.0.9",
-    "jest": "^24.8.0",
-    "lint-staged": "^9.4.3",
-    "prettier": "^1.19.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-xo": "^0.29.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.9",
+    "prettier": "^2.0.2",
     "yeoman-assert": "^3.1.0",
-    "yeoman-test": "^1.7.0"
+    "yeoman-test": "^2.3.0"
   },
   "engines": {
     "node": ">= 8.2.1",
     "npm": ">= 5.3.0"
-  },
-  "dependencies": {
-    "chalk": "^2.1.0",
-    "lodash": "^4.17.15",
-    "semver-compare": "^1.0.0",
-    "yeoman-generator": "^2.0.1",
-    "yosay": "^2.0.1"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "testRegex": "/__tests__/.*"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint -c package.json --no-eslintrc --fix",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "eslintConfig": {
     "extends": [
@@ -74,9 +43,40 @@
       "prettier"
     ]
   },
+  "files": [
+    "generators"
+  ],
+  "homepage": "https://github.com/ns8inc/generator-protect-integration",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testRegex": "/__tests__/.*"
+  },
+  "keywords": [
+    "ns8",
+    "protect",
+    "yeoman-generator"
+  ],
+  "lint-staged": {
+    "*.js": [
+      "eslint -c package.json --no-eslintrc --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "main": "generators/index.js",
+  "name": "@ns8/generator-protect-integration",
+  "repository": "https://github.com/ns8inc/protect-project-generator",
   "scripts": {
     "pretest": "eslint .",
     "test": "jest"
   },
-  "repository": "https://github.com/ns8inc/protect-project-generator"
+  "version": "0.0.14"
 }
