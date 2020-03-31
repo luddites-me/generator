@@ -38,10 +38,8 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           name: Configure NPM
       - run:
-          name: Publish to Yarn
-          command: |
-            version=$(node -p -e "require('./package.json').version")
-            yarn publish --non-interactive --new-version $version
+          command: npm publish
+          name: Publish
   test:
     docker:
       - image: node:12
