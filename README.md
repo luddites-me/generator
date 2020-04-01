@@ -1,8 +1,6 @@
-# generator-protect-integration
-> Protect Integration Project Generator
+# Protect Integration Project Generator
 
-[![CI](https://concourse.ns8-infrastructure.com/api/v1/teams/main/pipelines/generator-protect-integration/jobs/test/badge?title=tests)](https://concourse.ns8-infrastructure.com/api/v1/teams/main/pipelines/generator-protect-integration/jobs/test/badge)
-[![CI](https://concourse.ns8-infrastructure.com/api/v1/teams/main/pipelines/generator-protect-integration/jobs/test/badge?title=tests)](https://concourse.ns8-infrastructure.com/api/v1/teams/main/pipelines/generator-protect-integration/jobs/test/badge?title=tests)
+[![CircleCI](https://circleci.com/gh/ns8inc/generator-protect-integration.svg?style=svg&circle-token=c8653233eb3857e2f8f4d58ca8f79cf199b66ada)](https://app.circleci.com/pipelines/github/ns8inc/generator-protect-integration)
 
 ## Installation
 
@@ -16,6 +14,7 @@ npm install -g @ns8/generator-protect-integration
 ## Usage
 
 Create a directory for your new integration
+
 ```bash
 mkdir my-new-integration; cd my-new-integration/
 ```
