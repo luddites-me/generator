@@ -67,6 +67,6 @@ module.exports = class extends Generator {
     this.config.save();
     this.fs.copyTpl(this.templatePath('./.*'), this.destinationPath('./'), this.answers);
     this.fs.copyTpl(this.templatePath('./*.*'), this.destinationPath('./'), this.answers);
-    this.fs.copyTpl(this.templatePath('ci'), this.destinationPath('ci'), this.answers);
+    this.fs.copyTpl(this.templatePath('.circleci'), this.destinationPath('.circleci'), this.answers);
   }
 };
