@@ -8,7 +8,7 @@ const convertOrder = (switchContext: SwitchContext): NamedOrderUpdate => {
 };
 
 /**
- * This is the stateless function that will execute the actual protect-switchboard-sap switch logic.
+ * This is the stateless function that will execute the actual <%- platformName %> switch logic.
  */
 export class UpdateOrderStatusActionStep implements UpdateOrderStatusActionSwitch {
   // eslint-disable-next-line class-methods-use-this

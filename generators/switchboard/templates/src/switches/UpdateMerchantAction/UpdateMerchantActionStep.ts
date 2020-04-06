@@ -8,7 +8,7 @@ const convertMerchant = (switchContext: SwitchContext): MerchantUpdate => {
 };
 
 /**
- * This is the stateless function that will execute the actual protect-switchboard-sap switch logic.
+ * This is the stateless function that will execute the actual <%- platformName %> switch logic.
  */
 export class UpdateMerchantActionStep implements UpdateMerchantActionSwitch {
   // eslint-disable-next-line class-methods-use-this

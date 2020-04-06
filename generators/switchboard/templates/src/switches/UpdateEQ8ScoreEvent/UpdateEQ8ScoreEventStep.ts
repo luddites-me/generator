@@ -8,7 +8,7 @@ const getPlatformOrder = (switchContext: SwitchContext): Promise<PlatformOrder> 
 };
 
 /**
- * This is the stateless function that will execute the actual protect-switchboard-sap switch logic.
+ * This is the stateless function that will execute the actual <%- platformName %> switch logic.
  */
 export class UpdateEQ8ScoreEventStep implements EventSwitch {
   // eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-explicit-any
