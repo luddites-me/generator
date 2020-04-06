@@ -10,4 +10,4 @@ coverage/
 dist/
 node_modules/
 package-lock.json
-test/mock_data/
+sls.deploy.yml

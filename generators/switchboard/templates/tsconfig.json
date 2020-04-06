@@ -15,5 +15,5 @@
     "target": "es2019",
     "types": ["mocha", "node"]
   },
-  "include": ["switchboard/**/*"]
+  "include": ["src/**/*"]
 }

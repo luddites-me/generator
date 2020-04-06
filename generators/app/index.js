@@ -42,21 +42,12 @@ module.exports = class extends Generator {
         default: this.config.get('platformName') || this.determineAppname(),
         filter: kebabCase,
       },
-      {
-        type: 'confirm',
-        name: 'includePhp',
-        message: 'Do you want to create a PHP module for this integration?',
-        default: this.config.get('includePhp'),
-      },
     ];
 
     this.answers = await this.prompt(prompts);
     this.config.set({ ...this.answers, version: generatorVersion });
 
     this.composeWith(require.resolve('../switchboard'), this.answers);
-    if (this.answers.includePhp) {
-      this.composeWith(require.resolve('../php-module'), this.answers);
-    }
   }
 
   writing() {
