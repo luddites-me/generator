@@ -44,7 +44,7 @@
     "bundle": "webpack",
     "clean": "rm -rf .awcache dist .serverless .tmp release",
     "count": "cloc ./src ./build ./docs",
-    "deploy": "SET METHOD=deploy && npx ./node_modules/@ns8/protect-sdk-switchboard/dist/build/stepDeploy.js",
+    "deploy": "METHOD=deploy npx ./node_modules/@ns8/protect-sdk-switchboard/dist/build/stepDeploy.js",
     "docs:sync-readme": "npx ./node_modules/@ns8/protect-tools-js/dist/readme/standardizeReadme.js --repo-root .",
     "generate:exports": "cti create ./src -w",
     "lint": "eslint -c node_modules/protect-tools-lint/eslintrc.yml --ext=ts './src/**/*.ts'",
