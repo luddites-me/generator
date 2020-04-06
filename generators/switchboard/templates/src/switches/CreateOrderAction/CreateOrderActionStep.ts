@@ -1,6 +1,6 @@
 import { CreateOrderActionOperator } from '@ns8/ns8-switchboard-operator';
-import { CreateOrderActionSwitch } from 'ns8-switchboard-interfaces';
-import { SwitchContext } from 'ns8-switchboard-interfaces';
+import { CreateOrderActionSwitch, SwitchContext } from 'ns8-switchboard-interfaces';
+
 import { Order } from 'ns8-protect-models';
 
 const convertOrder = (switchContext: SwitchContext): Order => {
@@ -8,7 +8,7 @@ const convertOrder = (switchContext: SwitchContext): Order => {
 };
 
 /**
- * This is the stateless function that will execute the actual <%- platformName %> switch logic.
+ * This is the stateless function that will execute the actual protect-switchboard-sap switch logic.
  */
 export class CreateOrderActionStep implements CreateOrderActionSwitch {
   // eslint-disable-next-line class-methods-use-this

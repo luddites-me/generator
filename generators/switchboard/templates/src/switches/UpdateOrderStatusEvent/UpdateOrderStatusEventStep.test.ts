@@ -12,7 +12,7 @@ import { updateOrderStatusEventMock } from './updateOrderStatusEvent.mock';
 describe('create order action', () => {
   use(chaiAsPromised);
 
-  it('Converts a <%- platformName %> order to a Protect order', async () => {
+  it('Converts a protect-switchboard-sap order to a Protect order', async () => {
     const step = new UpdateOrderStatusEventStep();
     expect(async () => {
       await step.handle(updateOrderStatusEventMock);

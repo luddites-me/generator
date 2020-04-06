@@ -1,4 +1,4 @@
-import { SwitchContext, DataType } from 'ns8-switchboard-interfaces';
+import { DataType, SwitchContext } from 'ns8-switchboard-interfaces';
 import {
   /*
   SubjectType,

@@ -1,6 +1,6 @@
 import { UpdateMerchantActionOperator } from '@ns8/ns8-switchboard-operator';
-import { SwitchContext } from 'ns8-switchboard-interfaces';
-import { UpdateMerchantActionSwitch } from 'ns8-switchboard-interfaces';
+import { SwitchContext, UpdateMerchantActionSwitch } from 'ns8-switchboard-interfaces';
+
 import { MerchantUpdate } from 'ns8-protect-models';
 
 const convertMerchant = (switchContext: SwitchContext): MerchantUpdate => {
@@ -8,9 +8,10 @@ const convertMerchant = (switchContext: SwitchContext): MerchantUpdate => {
 };
 
 /**
- * This is the stateless function that will execute the actual <%- platformName %> switch logic.
+ * This is the stateless function that will execute the actual protect-switchboard-sap switch logic.
  */
 export class UpdateMerchantActionStep implements UpdateMerchantActionSwitch {
+  // eslint-disable-next-line class-methods-use-this
   async update(switchContext: SwitchContext): Promise<MerchantUpdate> {
     return convertMerchant(switchContext);
   }

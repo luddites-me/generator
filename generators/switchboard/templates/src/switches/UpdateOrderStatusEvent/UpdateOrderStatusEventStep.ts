@@ -1,7 +1,6 @@
 import { EventOperator } from '@ns8/ns8-switchboard-operator';
-import { EventSwitch } from 'ns8-switchboard-interfaces';
-import { NamedOrderUpdate } from 'ns8-switchboard-interfaces';
-import { SwitchContext } from 'ns8-switchboard-interfaces';
+import { EventSwitch, NamedOrderUpdate, SwitchContext } from 'ns8-switchboard-interfaces';
+
 import { OrderUpdate } from 'ns8-protect-models';
 
 const convertOrder = (switchContext: SwitchContext): NamedOrderUpdate => {
@@ -9,7 +8,7 @@ const convertOrder = (switchContext: SwitchContext): NamedOrderUpdate => {
 };
 
 /**
- * This is the stateless function that will execute the actual <%- platformName %> switch logic.
+ * This is the stateless function that will execute the actual protect-switchboard-sap switch logic.
  */
 export class UpdateOrderStatusEventStep implements EventSwitch {
   // eslint-disable-next-line class-methods-use-this

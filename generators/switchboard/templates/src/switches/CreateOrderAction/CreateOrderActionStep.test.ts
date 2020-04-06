@@ -6,13 +6,13 @@
 import { expect, use } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import 'mocha';
-import { CreateOrderActionStep, CreateOrderAction } from './CreateOrderActionStep';
+import { CreateOrderAction, CreateOrderActionStep } from './CreateOrderActionStep';
 import { orderMock } from './orderMock';
 
 describe('create order action', () => {
   use(chaiAsPromised);
 
-  it('Converts a <%- platformName %> order to a Protect order', async () => {
+  it('Converts a protect-switchboard-sap order to a Protect order', async () => {
     const step = new CreateOrderActionStep();
     expect(async () => {
       await step.create(orderMock);

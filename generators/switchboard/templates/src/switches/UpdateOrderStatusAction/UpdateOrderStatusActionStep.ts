@@ -1,7 +1,6 @@
 import { UpdateOrderStatusActionOperator } from '@ns8/ns8-switchboard-operator';
-import { NamedOrderUpdate } from 'ns8-switchboard-interfaces';
-import { SwitchContext } from 'ns8-switchboard-interfaces';
-import { UpdateOrderStatusActionSwitch } from 'ns8-switchboard-interfaces';
+import { NamedOrderUpdate, SwitchContext, UpdateOrderStatusActionSwitch } from 'ns8-switchboard-interfaces';
+
 import { OrderUpdate } from 'ns8-protect-models';
 
 const convertOrder = (switchContext: SwitchContext): NamedOrderUpdate => {
@@ -9,9 +8,10 @@ const convertOrder = (switchContext: SwitchContext): NamedOrderUpdate => {
 };
 
 /**
- * This is the stateless function that will execute the actual <%- platformName %> switch logic.
+ * This is the stateless function that will execute the actual protect-switchboard-sap switch logic.
  */
 export class UpdateOrderStatusActionStep implements UpdateOrderStatusActionSwitch {
+  // eslint-disable-next-line class-methods-use-this
   async update(switchContext: SwitchContext): Promise<NamedOrderUpdate> {
     return convertOrder(switchContext);
   }
