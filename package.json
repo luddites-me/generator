@@ -12,6 +12,7 @@
   },
   "description": "Protect integration project generator",
   "devDependencies": {
+    "@ns8/protect-tools-js": "0.0.9",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-config-xo": "^0.29.1",
@@ -28,20 +29,20 @@
     "npm": ">= 5.3.0"
   },
   "eslintConfig": {
-    "extends": [
-      "xo",
-      "prettier"
-    ],
     "env": {
       "jest": true,
       "node": true
     },
-    "rules": {
-      "prettier/prettier": "error"
-    },
+    "extends": [
+      "xo",
+      "prettier"
+    ],
     "plugins": [
       "prettier"
-    ]
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    }
   },
   "files": [
     "generators"
@@ -75,8 +76,33 @@
   "name": "@ns8/generator-protect-integration",
   "repository": "https://github.com/ns8inc/protect-project-generator",
   "scripts": {
+    "build": "yarn sortJson && yarn docs:sync-readme",
+    "docs:sync-readme": "npx ./node_modules/@ns8/protect-tools-js/dist/readme/standardizeReadme.js --repo-root .",
     "pretest": "eslint .",
+    "sortJson": "npx ./node_modules/@ns8/protect-tools-js/dist/sortJson/sortJson.js",
     "test": "jest"
+  },
+  "scriptsDocumentation": {
+    "build": {
+      "description": "Sorts JSON and runs documentation",
+      "dev": false
+    },
+    "docs:sync-readme": {
+      "description": "Runs the documentation tools",
+      "dev": true
+    },
+    "pretest": {
+      "description": "Runs ESLint",
+      "dev": true
+    },
+    "sortJson": {
+      "description": "Alpha-sorts all JSON files",
+      "dev": true
+    },
+    "test": {
+      "description": "Runs the Jest tests",
+      "dev": true
+    }
   },
   "version": "0.0.14"
 }

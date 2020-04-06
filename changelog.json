@@ -5,8 +5,6 @@
       "Confirmation when running in a project that is behind the generator version",
       "Version of the generator used is now added to the .yo-rc.json file"
     ],
-    "0.0.14": [
-      "Upgraded template dependencies to their latest versions"
-    ]
+    "0.0.14": ["Upgraded template dependencies to their latest versions"]
   }
 }
