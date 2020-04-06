@@ -53,6 +53,9 @@ jobs:
             fi
           name: Skip if CI Made the Last Commit
       - run:
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          name: Configure NPM
+      - run:
           command: yarn
           name: Install Dependencies
       - run:
