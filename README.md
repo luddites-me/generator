@@ -1,37 +1,43 @@
-# generator-protect-integration
-> Protect Integration Project Generator
+# Protect Integration Project Generator
 
-[![CI](https://concourse.ns8-infrastructure.com/api/v1/teams/main/pipelines/generator-protect-integration/jobs/test/badge?title=tests)](https://concourse.ns8-infrastructure.com/api/v1/teams/main/pipelines/generator-protect-integration/jobs/test/badge)
-[![CI](https://concourse.ns8-infrastructure.com/api/v1/teams/main/pipelines/generator-protect-integration/jobs/test/badge?title=tests)](https://concourse.ns8-infrastructure.com/api/v1/teams/main/pipelines/generator-protect-integration/jobs/test/badge?title=tests)
+[![CircleCI](https://circleci.com/gh/ns8inc/generator-protect-integration.svg?style=svg&circle-token=c8653233eb3857e2f8f4d58ca8f79cf199b66ada)](https://app.circleci.com/pipelines/github/ns8inc/generator-protect-integration)
 
-## Installation
+## Table of Contents
 
-First, install [Yeoman](http://yeoman.io) and generator-protect-integration using [npm](https://www.npmjs.com/).
+- [Protect Integration Project Generator](#protect-integration-project-generator)
+  - [Getting Started](#getting-started)
+  - [`package.json` scripts](#packagejson-scripts)
+  - [License](#license)
 
-```bash
-npm install -g yo
-npm install -g @ns8/generator-protect-integration
-```
+## Getting Started
 
-## Usage
+To get started, take a look at the documentation listed below:
 
-Create a directory for your new integration
-```bash
-mkdir my-new-integration; cd my-new-integration/
-```
+- [Getting Started](docs\getting-started.md)
 
-Then generate your new project:
+## `package.json` scripts
 
-```bash
-yo @ns8/protect-integration
-```
+`yarn build`
 
-## Development
+- Sorts JSON and runs documentation
 
-[Getting Started](public/en/platform/generator-protect-integration/getting-started.md)
+`yarn docs:sync-readme`
+
+- Runs the documentation tools
+
+`yarn pretest`
+
+- Runs ESLint
+
+`yarn sortJson`
+
+- Alpha-sorts all JSON files
+
+`yarn test`
+
+- Runs the Jest tests
 
 ## License
 
 See [License](./LICENSE)
-
- © [ns8inc](https://ns8.com)
+© [ns8inc](https://ns8.com)

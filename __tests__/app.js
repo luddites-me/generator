@@ -9,6 +9,6 @@ describe('generator-protect-integration:app', () => {
   });
 
   it('creates files', () => {
-    assert.file(['switchboard/index.ts']);
+    assert.file(['src/index.ts']);
   });
 });

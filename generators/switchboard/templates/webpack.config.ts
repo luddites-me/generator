@@ -3,7 +3,7 @@ import { BundleMode, BundleTarget, getWebpackConfig } from '@ns8/protect-tools-b
 export default getWebpackConfig({
   bundleTarget: BundleTarget.NODE,
   distDirectory: './dist',
-  sourceDirectory: './switchboard',
-  libraryName: 'switchboard',
+  sourceDirectory: './src',
+  libraryName: 'index',
   mode: BundleMode.DEVELOPMENT,
 });
