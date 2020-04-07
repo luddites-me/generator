@@ -21,7 +21,7 @@ To get started, take a look at the documentation listed below:
 ## `package.json` scripts
 
 - `yarn build`: Sorts JSON and runs documentation
-- `yarn docs:sync-readme`: Runs the documentation tools
+- `yarn docs:standardize`: Runs the documentation tools
 - `yarn pretest`: Runs ESLint
 - `yarn sortJson`: Alpha-sorts all JSON files
 - `yarn test`: Runs the Jest tests

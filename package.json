@@ -76,8 +76,8 @@
   "name": "@ns8/generator-protect-integration",
   "repository": "https://github.com/ns8inc/protect-project-generator",
   "scripts": {
-    "build": "yarn sortJson && yarn docs:sync-readme",
-    "docs:sync-readme": "npx ./node_modules/@ns8/protect-tools-js/dist/readme/standardizeReadme.js --repo-root .",
+    "build": "yarn sortJson && yarn docs:standardize",
+    "docs:standardize": "npx ./node_modules/@ns8/protect-tools-js/dist/readme/standardizeReadme.js --repo-root .",
     "pretest": "eslint .",
     "sortJson": "npx ./node_modules/@ns8/protect-tools-js/dist/sortJson/sortJson.js",
     "test": "jest"
@@ -87,7 +87,7 @@
       "description": "Sorts JSON and runs documentation",
       "dev": false
     },
-    "docs:sync-readme": {
+    "docs:standardize": {
       "description": "Runs the documentation tools",
       "dev": true
     },

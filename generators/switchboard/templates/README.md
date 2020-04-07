@@ -32,7 +32,7 @@ See [License](./LICENSE)
 - Counts lines of source code
   `yarn deploy`
 - Deploys the polling lamdbas to AWS
-  `yarn docs:sync-readme`
+  `yarn docs:standardize`
 - Creates or updates a new readme with a standard set of readme sections, including a toc, yarn script documention, links to repo documentation files and an NS8 license
   `yarn generate:exports`
 - Generates index.ts files for all exports recursively in the 'src' folder

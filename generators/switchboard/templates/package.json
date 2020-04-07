@@ -45,16 +45,16 @@
     "clean": "rm -rf .awcache dist .serverless .tmp release",
     "count": "cloc ./src ./build ./docs",
     "deploy": "METHOD=deploy npx ./node_modules/@ns8/protect-sdk-switchboard/dist/build/stepDeploy.js",
-    "docs:sync-readme": "npx ./node_modules/@ns8/protect-tools-js/dist/readme/standardizeReadme.js --repo-root .",
+    "docs:standardize": "npx ./node_modules/@ns8/protect-tools-js/dist/readme/standardizeReadme.js",
     "generate:exports": "cti create ./src -w",
-    "lint": "eslint -c node_modules/protect-tools-lint/eslintrc.yml --ext=ts './src/**/*.ts'",
-    "lint:docs": "eslint -c node_modules/protect-tools-lint/eslintrc.yml --ext=ts './docs/**/*.md'",
+    "lint": "eslint -c node_modules/@ns8/protect-tools-lint/eslintrc.yml --ext=ts './src/**/*.ts'",
+    "lint:docs": "eslint -c node_modules/@ns8/protect-tools-lint/eslintrc.yml --ext=ts './docs/**/*.md'",
     "lint:fix": "yarn lint --fix",
     "rebuild": "yarn clean && yarn build",
     "rebuild:dev": "yarn clean && yarn build:dev",
-    "sortJson": "npx ./node_modules/@ns8/protect-tools-js/dist/sortJson/sortJson.js && yarn docs:sync-readme",
+    "sortJson": "npx ./node_modules/@ns8/protect-tools-js/dist/sortJson/sortJson.js && yarn docs:standardize",
     "test": "yarn count",
-    "test:coverage": "nyc --nycrc-path 'node_modules/protect-tools-lint/nycrc.yml' mocha 'src/**/*test.ts' && yarn count",
+    "test:coverage": "nyc --nycrc-path 'node_modules/@ns8/protect-tools-lint/nycrc.yml' mocha 'src/**/*test.ts' && yarn count",
     "test:debug": "mocha -r ts-node/register 'src/**/*test.ts'",
     "undeploy": "METHOD=remove npx ./node_modules/@ns8/protect-sdk-switchboard/dist/stepDeploy.js"
   },
@@ -83,7 +83,7 @@
       "description": "Deploys the polling lamdbas to AWS",
       "dev": true
     },
-    "docs:sync-readme": {
+    "docs:standardize": {
       "description": "Creates or updates a new readme with a standard set of readme sections, including a toc, yarn script documention, links to repo documentation files and an NS8 license",
       "dev": true
     },
