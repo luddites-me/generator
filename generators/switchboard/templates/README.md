@@ -1,5 +1,11 @@
 # Switchboard Integration
 
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [License](#license)
+- [`package.json` scripts](#packagejson-scripts)
+
 ## Getting Started
 
 To get started, take a look at the documentation listed below:
@@ -9,66 +15,38 @@ To get started, take a look at the documentation listed below:
 ## License
 
 See [License](./LICENSE)
- © [ns8inc](https://ns8.com)
+© [ns8inc](https://ns8.com)
 
 ## `package.json` scripts
 
 `yarn build`
 
 - Assembles `src` code into a single, minified JS module with type definitions. Exports `build` scripts into a build folder.
-
-`yarn build:dev`
-
+  `yarn build:dev`
 - Builds in dev mode
-
-`yarn bundle`
-
+  `yarn bundle`
 - Runs WebPack on the `src` code
-
-`yarn clean`
-
+  `yarn clean`
 - Purges all temporary folders
-
-`yarn count`
-
+  `yarn count`
 - Counts lines of source code
-
-`yarn deploy`
-
+  `yarn deploy`
 - Deploys the polling lamdbas to AWS
-
-`yarn docs:sync-readme`
-
+  `yarn docs:sync-readme`
 - Creates or updates a new readme with a standard set of readme sections, including a toc, yarn script documention, links to repo documentation files and an NS8 license
-
-`yarn generate:exports`
-
+  `yarn generate:exports`
 - Generates index.ts files for all exports recursively in the 'src' folder
-
-`yarn lint`
-
+  `yarn lint`
 - Lints the codebase and the documentation
-
-`yarn lint:fix`
-
+  `yarn lint:fix`
 - Lints the codebase and automatically fixes what it can
-
-`yarn sortJson`
-
+  `yarn sortJson`
 - Performs aesthetic operations to make the project files easier to navigate and read
-
-`yarn test`
-
+  `yarn test`
 - Runs tests and calculates test coverage
-
-`yarn test:coverage`
-
+  `yarn test:coverage`
 - Calculates test coverage
-
-`yarn test:debug`
-
+  `yarn test:debug`
 - Runs tests with the debugger
-
-`yarn undeploy`
-
+  `yarn undeploy`
 - Removes the polling lamdbas from AWS
