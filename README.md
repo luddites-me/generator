@@ -13,29 +13,18 @@
 
 To get started, take a look at the documentation listed below:
 
-- [Getting Started](docs\getting-started.md)
+- [Getting Started](docs/getting-started.md)
+- [Getting Started](generators/app/templates/README.md)
+- [Getting Started](generators/switchboard/templates/docs/getting-started.md)
+- [Switchboard Integration](generators/switchboard/templates/README.md)
 
 ## `package.json` scripts
 
-`yarn build`
-
-- Sorts JSON and runs documentation
-
-`yarn docs:sync-readme`
-
-- Runs the documentation tools
-
-`yarn pretest`
-
-- Runs ESLint
-
-`yarn sortJson`
-
-- Alpha-sorts all JSON files
-
-`yarn test`
-
-- Runs the Jest tests
+- `yarn build`: Sorts JSON and runs documentation
+- `yarn docs:sync-readme`: Runs the documentation tools
+- `yarn pretest`: Runs ESLint
+- `yarn sortJson`: Alpha-sorts all JSON files
+- `yarn test`: Runs the Jest tests
 
 ## License
 

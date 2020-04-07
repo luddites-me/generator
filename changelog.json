@@ -5,7 +5,9 @@
       "Confirmation when running in a project that is behind the generator version",
       "Version of the generator used is now added to the .yo-rc.json file"
     ],
-    "0.0.14": ["Upgraded template dependencies to their latest versions"],
+    "0.0.14": [
+      "Upgraded template dependencies to their latest versions"
+    ],
     "0.0.15": [
       "Updated the switchboard generator to use the latest version of the SDK",
       "Updated build tooling to use latest SDK methods for project tasks: build, lint, docs, etc."

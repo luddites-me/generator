@@ -481,15 +481,16 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@ns8/protect-tools-js@0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@ns8/protect-tools-js/-/protect-tools-js-0.0.9.tgz#d496788a519e4e1f9e2d2a550993fc39b19e44ab"
-  integrity sha512-QinQ/KadkAosFsmlNaqdwfZ9+xRk7w/2lxdshBgCCJXfnLg6gGh4tCi4Detr4YoksRTp5n9mi66ugUTAB9EOpg==
+"@ns8/protect-tools-js@0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@ns8/protect-tools-js/-/protect-tools-js-0.0.10.tgz#a2e1f6d2e1b83b3b5e25bec91a670ac4170b576c"
+  integrity sha512-R4Bs6d5+WDQqtHhyewny9gB9NkkTi0/ncjFSp0QKfV9FDCAC8IQAxkfE9o197VWb6tbWMNAf/Yuxq910vkm/oQ==
   dependencies:
     cloc "2.5.1"
     concurrently "5.1.0"
     dotenv-extended "2.8.0"
     mocha-parallel-tests "2.3.0"
+    prettier "2.0.4"
     sorted-json "0.2.6"
     stdio "^2.1.1"
     ts-node "8.8.1"
@@ -4217,6 +4218,11 @@ prettier-linter-helpers@^1.0.0:
   integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
   dependencies:
     fast-diff "^1.1.2"
+
+prettier@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.4.tgz#2d1bae173e355996ee355ec9830a7a1ee05457ef"
+  integrity sha512-SVJIQ51spzFDvh4fIbCLvciiDMCrRhlN3mbZvv/+ycjvmF5E73bKdGfU8QDLNmjYJf+lsGnDBC4UUnvTe5OO0w==
 
 prettier@^2.0.2:
   version "2.0.2"
