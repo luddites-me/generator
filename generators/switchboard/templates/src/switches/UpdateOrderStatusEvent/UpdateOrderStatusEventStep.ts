@@ -4,7 +4,7 @@ import { QueueClient } from '@ns8/protect-sdk-switchboard';
 import { OrderUpdate } from 'ns8-protect-models';
 
 /**
- * This is the stateless function that will execute the actual protect-switchboard-sap switch logic.
+ * This is the stateless function that will execute the actual <%- platformName %> switch logic.
  */
 export class UpdateOrderStatusEventStep implements EventSwitch {
   async handle(switchContext: SwitchContext): Promise<NamedOrderUpdate> {

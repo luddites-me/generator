@@ -3,7 +3,7 @@ import { EventSwitch, SwitchContext } from 'ns8-switchboard-interfaces';
 import { QueueClient } from '@ns8/protect-sdk-switchboard';
 
 /**
- * This is the stateless function that will execute the actual protect-switchboard-sap switch logic.
+ * This is the stateless function that will execute the actual <%- platformName %> switch logic.
  */
 export class UpdateOrderRiskEventStep implements EventSwitch {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
