@@ -1,18 +1,16 @@
 import { EventOperator } from '@ns8/ns8-switchboard-operator';
 import { EventSwitch, NamedOrderUpdate, SwitchContext } from 'ns8-switchboard-interfaces';
+import { QueueClient } from '@ns8/protect-sdk-switchboard';
 import { OrderUpdate } from 'ns8-protect-models';
 
-const convertOrder = (switchContext: SwitchContext): NamedOrderUpdate => {
-  throw new Error(`not implemented ${switchContext}`);
-};
-
 /**
- * This is the stateless function that will execute the actual <%- platformName %> switch logic.
+ * This is the stateless function that will execute the actual protect-switchboard-sap switch logic.
  */
 export class UpdateOrderStatusEventStep implements EventSwitch {
-  // eslint-disable-next-line class-methods-use-this
   async handle(switchContext: SwitchContext): Promise<NamedOrderUpdate> {
-    return convertOrder(switchContext);
+    const queueClient = new QueueClient(switchContext);
+    await queueClient.createUpdateOrderStatusEvent();
+    return {} as NamedOrderUpdate;
   }
 }
 
