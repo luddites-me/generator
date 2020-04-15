@@ -62,7 +62,7 @@ jobs:
           command: yarn build:prod
           name: Build for Production
       - run:
-          command: DEV_SUFFIX=prod yarn deploy
+          command: yarn deploy --stage=prod
           name: Deploy Switchboard (prod)
   publish:
     docker:
@@ -72,6 +72,12 @@ jobs:
       - run:
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           name: Configure NPM
+      - run:
+          command: yarn
+          name: Install Dependencies
+      - run:
+          command: yarn build
+          name: Build
       - run:
           name: Publish
           command: npm publish
