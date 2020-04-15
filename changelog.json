@@ -11,6 +11,11 @@
     "0.0.15": [
       "Updated the switchboard generator to use the latest version of the SDK",
       "Updated build tooling to use latest SDK methods for project tasks: build, lint, docs, etc."
+    ],
+    "0.0.16": [
+      "Switchboard scaffolding now includes CircleCI configuration.",
+      "Order Events now have a default implementation which publishes to the SQS queue.",
+      "Updated dependencies to latest."
     ]
   }
 }
