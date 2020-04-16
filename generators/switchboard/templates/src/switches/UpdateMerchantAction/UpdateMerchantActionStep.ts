@@ -1,11 +1,7 @@
 import { UpdateMerchantActionOperator } from '@ns8/ns8-switchboard-operator';
 import { SwitchContext, UpdateMerchantActionSwitch } from 'ns8-switchboard-interfaces';
-
 import { MerchantUpdate } from 'ns8-protect-models';
-
-const convertMerchant = (switchContext: SwitchContext): MerchantUpdate => {
-  throw new Error(`not implemented ${switchContext}`);
-};
+import { toMerchant } from '@ns8/protect-sdk-switchboard';
 
 /**
  * This is the stateless function that will execute the actual <%- platformName %> switch logic.
@@ -13,7 +9,9 @@ const convertMerchant = (switchContext: SwitchContext): MerchantUpdate => {
 export class UpdateMerchantActionStep implements UpdateMerchantActionSwitch {
   // eslint-disable-next-line class-methods-use-this
   async update(switchContext: SwitchContext): Promise<MerchantUpdate> {
-    return convertMerchant(switchContext);
+    // if the property names are all aligned, this method will do everything you need.
+    // otherwise, look at the use cases in the switchboard SDK and customize this as needed.
+    return toMerchant(switchContext.data);
   }
 }
 
