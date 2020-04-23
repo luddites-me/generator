@@ -14,7 +14,7 @@ To get started, take a look at the documentation listed below:
 
 ## Environment Variables
 
-- `AWS_SERVERLESS_YML`: Use default value: node_modules/@ns8/protect-sdk-switchboard/serverless.common.yml`.
+- `AWS_SERVERLESS_YML`: Use default value: `node_modules/@ns8/protect-sdk-switchboard/serverless.common.yml`.
 - `AWS_SERVICE_NAME`: Use default value: `ns8-switchboard-magento2`.`
 - `DEV_SUFFIX`: Developer initials to use for serverless deployments (overrides `NODE_ENV` for ARNs).
 - `NODE_ENV`: Environment. Default: dev. Options are: dev, test and prod.

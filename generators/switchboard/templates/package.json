@@ -21,7 +21,7 @@
   },
   "envDocumentation": {
     "AWS_SERVERLESS_YML": {
-      "description": "Use default value: node_modules/@ns8/protect-sdk-switchboard/serverless.common.yml`."
+      "description": "Use default value: `node_modules/@ns8/protect-sdk-switchboard/serverless.common.yml`."
     },
     "AWS_SERVICE_NAME": {
       "description": "Use default value: `ns8-switchboard-magento2`.`"
