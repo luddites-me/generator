@@ -16,6 +16,9 @@
       "Switchboard scaffolding now includes CircleCI configuration.",
       "Order Events now have a default implementation which publishes to the SQS queue.",
       "Updated dependencies to latest."
+    ],
+    "0.0.17": [
+      "Updated tooling in Switchboard scaffolding to use latest documentation tools."
     ]
   }
 }

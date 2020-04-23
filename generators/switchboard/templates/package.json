@@ -2,29 +2,42 @@
   "author": "ns8inc",
   "dependencies": {
     "@ns8/ns8-switchboard-operator": "^1.0.129",
-    "@ns8/protect-sdk-switchboard": "^0.2.27",
-    "ns8-protect-models": "^1.0.269",
-    "ns8-switchboard-interfaces": "^1.0.114"
+    "@ns8/ns8-switchboard-operator": "1.0.129",
+    "@ns8/protect-sdk-switchboard": "0.2.29",
+    "ns8-protect-models": "1.0.263",
+    "ns8-switchboard-interfaces": "1.0.114"
   },
   "description": "<%- platformName %> integration project",
   "devDependencies": {
-    "@ns8/protect-tools-bundle": "0.0.14",
-    "@ns8/protect-tools-js": "0.0.10",
-    "@ns8/protect-tools-lint": "0.0.7",
-    "@types/aws-lambda": "8.10.49",
+    "@ns8/protect-tools-js": "0.1.3",
+    "@types/aws-lambda": "^8.10.49",
+    "@types/aws4": "^1.5.1",
     "@types/chai": "4.2.11",
     "@types/chai-as-promised": "7.1.2",
     "@types/mocha": "7.0.2",
     "@types/node": "13.11.1",
-    "chai": "4.2.0",
-    "chai-as-promised": "7.1.1",
-    "create-ts-index": "1.12.0",
-    "mocha": "7.1.1",
-    "nyc": "15.0.0",
-    "ts-mocha": "7.0.0",
-    "ts-node": "8.8.1",
     "typescript": "3.8.3",
-    "webpack-cli": "3.3.11"
+    "url": "0.11.0"
+  },
+  "envDocumentation": {
+    "AWS_SERVERLESS_YML": {
+      "description": "Use default value: node_modules/@ns8/protect-sdk-switchboard/serverless.common.yml`."
+    },
+    "AWS_SERVICE_NAME": {
+      "description": "Use default value: `ns8-switchboard-magento2`.`"
+    },
+    "DEV_SUFFIX": {
+      "description": "Developer initials to use for serverless deployments (overrides `NODE_ENV` for ARNs)."
+    },
+    "NODE_ENV": {
+      "description": "Environment. Default: dev. Options are: dev, test and prod."
+    },
+    "NS8_CLIENT_URL": {
+      "description": "URL for the middleware."
+    },
+    "NS8_PROTECT_URL": {
+      "description": "URL for the API."
+    }
   },
   "files": [
     "dist"
@@ -34,23 +47,23 @@
   "name": "@ns8/<%- platformName %>-platform",
   "private": true,
   "scripts": {
-    "build": "yarn && yarn generate:exports && yarn sortJson && tsc --emitDeclarationOnly && yarn bundle",
+    "build": "yarn && yarn clean && yarn generate:exports && yarn bundle && yarn sortJson && yarn docs:all",
     "build:dev": "NODE_ENV=dev yarn build",
     "build:prod": "NODE_ENV=prod yarn build",
-    "bundle": "webpack",
-    "clean": "rm -rf .awcache dist .serverless .tmp release",
+    "bundle": "tsc -d && webpack",
+    "clean": "rm -rf .awcache dist .serverless .tmp api temp",
     "count": "cloc ./src ./build ./docs",
     "deploy": "METHOD=deploy npx ./node_modules/@ns8/protect-sdk-switchboard/dist/build/stepDeploy.js",
+    "docs:all": "yarn docs:standardize && yarn docs:api",
+    "docs:api": "npx ./node_modules/@ns8/protect-tools-js/dist/docs/generateApi.js --path=./api-extractor.json",
+    "docs:publish": "npx ./node_modules/@ns8/protect-tools-js/dist/docs/generateApiDocs.js",
     "docs:standardize": "npx ./node_modules/@ns8/protect-tools-js/dist/readme/standardizeReadme.js",
-    "generate:exports": "cti create ./src -w",
-    "lint": "eslint -c node_modules/@ns8/protect-tools-lint/eslintrc.yml --ext=ts './src/**/*.ts'",
-    "lint:docs": "eslint -c node_modules/@ns8/protect-tools-lint/eslintrc.yml --ext=ts './docs/**/*.md'",
+    "generate:exports": "cti create ./src -w -b",
+    "lint": "eslint -c node_modules/@ns8/protect-tools-js/.eslintrc.yml './src/**/*.ts'",
     "lint:fix": "yarn lint --fix",
-    "rebuild": "yarn clean && yarn build",
-    "rebuild:dev": "yarn clean && yarn build:dev",
-    "sortJson": "npx ./node_modules/@ns8/protect-tools-js/dist/sortJson/sortJson.js && yarn docs:standardize",
+    "sortJson": "npx ./node_modules/@ns8/protect-tools-js/dist/lint/sortJson.js",
     "test": "yarn count",
-    "test:coverage": "nyc --nycrc-path 'node_modules/@ns8/protect-tools-lint/nycrc.yml' mocha 'src/**/*test.ts' && yarn count",
+    "test:coverage": "nyc --nycrc-path 'node_modules/@ns8/protect-tools-js/.nycrc.yml' mocha 'src/**/*test.ts' && yarn count",
     "test:debug": "mocha -r ts-node/register 'src/**/*test.ts'",
     "undeploy": "METHOD=remove npx ./node_modules/@ns8/protect-sdk-switchboard/dist/stepDeploy.js"
   },
@@ -61,6 +74,10 @@
     },
     "build:dev": {
       "description": "Builds in dev mode",
+      "dev": true
+    },
+    "build:prod": {
+      "description": "Builds in prod mode.",
       "dev": true
     },
     "bundle": {
@@ -77,6 +94,18 @@
     },
     "deploy": {
       "description": "Deploys the polling lamdbas to AWS",
+      "dev": true
+    },
+    "docs:all": {
+      "description": "Runs the API and standardization scripts.",
+      "dev": true
+    },
+    "docs:api": {
+      "description": "Creates a `project-api` Markdown in docs and an `index.d.ts` file in dist.",
+      "dev": true
+    },
+    "docs:publish": {
+      "description": "Publishes the assembled Markdown docs to `gh-pages` branch.",
       "dev": true
     },
     "docs:standardize": {
@@ -116,6 +145,6 @@
       "dev": true
     }
   },
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "version": "0.0.1"
 }
