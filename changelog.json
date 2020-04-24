@@ -18,7 +18,8 @@
       "Updated dependencies to latest."
     ],
     "0.0.17": [
-      "Updated tooling in Switchboard scaffolding to use latest documentation tools."
+      "Updated tooling in Switchboard scaffolding to use latest documentation tools.",
+      "Eliminated all redundant dependencies and updated bundle devtool."
     ]
   }
 }

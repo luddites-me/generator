@@ -7,7 +7,7 @@ import {
 
 export default getWebpackConfig({
   bundleTarget: BundleTarget.NODE,
-  devtool: BundleDevTool.INLINE_SOURCE_MAP,
+  devtool: BundleDevTool.EVAL,
   distDirectory: './dist',
   // Globals hack to address https://github.com/node-formidable/formidable/issues/337#issuecomment-183388869
   globals: [{ name: 'GENTLY', value: false }],
