@@ -22,7 +22,7 @@
     "lint-staged": "^10.0.9",
     "prettier": "^2.0.5",
     "yeoman-assert": "^3.1.0",
-    "yeoman-test": "^2.3.0"
+    "yeoman-test": "^2.6.0"
   },
   "engines": {
     "node": ">= 8.2.1",
