@@ -13,10 +13,14 @@
 
 To get started, take a look at the documentation listed below:
 
-- [Getting Started](docs/getting-started.md)
-- [Getting Started](generators/app/templates/README.md)
-- [Getting Started](generators/switchboard/templates/docs/getting-started.md)
-- [Switchboard Integration](generators/switchboard/templates/README.md)
+- docs
+  - [Getting Started](docs/getting-started.md)
+- generators/app/templates
+  - [Getting Started](generators/app/templates/README.md)
+- generators/switchboard/templates/docs
+  - [Getting Started](generators/switchboard/templates/docs/getting-started.md)
+- generators/switchboard/templates
+  - [Switchboard Integration](generators/switchboard/templates/README.md)
 
 ## `package.json` scripts
 

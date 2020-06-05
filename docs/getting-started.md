@@ -2,11 +2,12 @@
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Tests](#tests)
-- [Running the generator](#running-the-generator)
-- [Changelog](#changelog)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Tests](#tests)
+  - [Running the generator](#running-the-generator)
+  - [Changelog](#changelog)
 
 ## Installation
 
