@@ -4,7 +4,7 @@
     "url": "https://ns8.com"
   },
   "dependencies": {
-    "chalk": "^4.0.0",
+    "chalk": "^4.1.0",
     "lodash": "^4.17.15",
     "semver-compare": "^1.0.0",
     "yeoman-generator": "^4.7.2",
