@@ -1,11 +1,11 @@
 {
   "author": "ns8inc",
   "dependencies": {
-    "@ns8/protect-sdk-switchboard": "0.2.31"
+    "@ns8/protect-sdk-switchboard": "1.0.5"
   },
   "description": "<%- platformName %> integration project",
   "devDependencies": {
-    "@ns8/protect-tools-js": "0.1.4",
+    "@ns8/protect-tools-js": "1.0.7",
     "url": "0.11.0"
   },
   "envDocumentation": {
