@@ -5,7 +5,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=${NS8_GLOBAL_NPM_TOKEN}" > ~/.npmrc
           name: Configure NPM
       - run:
           command: yarn
@@ -53,7 +53,7 @@ jobs:
             git push origin dev
           name: Merge Changes Back to Development Branch
       - run:
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=${NS8_GLOBAL_NPM_TOKEN}" > ~/.npmrc
           name: Configure NPM
       - run:
           command: yarn
@@ -70,7 +70,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=${NS8_GLOBAL_NPM_TOKEN}" > ~/.npmrc
           name: Configure NPM
       - run:
           command: yarn
@@ -94,7 +94,7 @@ jobs:
             fi
           name: Skip if CI Made the Last Commit
       - run:
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=${NS8_GLOBAL_NPM_TOKEN}" > ~/.npmrc
           name: Configure NPM
       - run:
           command: yarn
