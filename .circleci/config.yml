@@ -50,6 +50,9 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=${NS8_GLOBAL_NPM_TOKEN}" > ~/.npmrc
           name: Configure NPM
       - run:
+          command: yarn
+          name: Install Dependencies
+      - run:
           command: npm publish
           name: Publish
       - run:
