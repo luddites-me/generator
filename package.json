@@ -13,7 +13,7 @@
   "description": "Protect integration project generator",
   "devDependencies": {
     "@ns8/protect-tools-js": "1.0.7",
-    "eslint": "^7.6.0",
+    "eslint": "^7.7.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-xo": "^0.32.1",
     "eslint-plugin-prettier": "^3.1.4",
