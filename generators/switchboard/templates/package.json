@@ -1,7 +1,7 @@
 {
   "author": "ns8inc",
   "dependencies": {
-    "@ns8/protect-sdk-switchboard": "1.0.5"
+    "@ns8/protect-sdk-switchboard": "1.0.236"
   },
   "description": "<%- platformName %> integration project",
   "devDependencies": {
