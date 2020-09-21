@@ -2,12 +2,11 @@
 
 ## Table of Contents
 
-- [Switchboard Integration](#switchboard-integration)
-  - [Table of Contents](#table-of-contents)
-  - [Getting Started](#getting-started)
-  - [Environment Variables](#environment-variables)
-  - [`package.json` scripts](#packagejson-scripts)
-  - [License](#license)
+- [Table of Contents](#table-of-contents)
+- [Getting Started](#getting-started)
+- [Environment Variables](#environment-variables)
+- [`package.json` scripts](#packagejson-scripts)
+- [License](#license)
 
 ## Getting Started
 
@@ -49,4 +48,4 @@ To get started, take a look at the documentation listed below:
 ## License
 
 See [License](./LICENSE)
-© [ns8inc](https://ns8.com)
+!© [Luddites](https://github.com/luddites-me)

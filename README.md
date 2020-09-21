@@ -1,10 +1,8 @@
-# Protect Integration Project Generator
-
-[![CircleCI](https://circleci.com/gh/ns8inc/generator-protect-integration.svg?style=svg&circle-token=c8653233eb3857e2f8f4d58ca8f79cf199b66ada)](https://app.circleci.com/pipelines/github/ns8inc/generator-protect-integration)
+# Project Generator
 
 ## Table of Contents
 
-- [Protect Integration Project Generator](#protect-integration-project-generator)
+- [Project Generator](#project-generator)
   - [Getting Started](#getting-started)
   - [`package.json` scripts](#packagejson-scripts)
   - [License](#license)
@@ -15,12 +13,6 @@ To get started, take a look at the documentation listed below:
 
 - docs
   - [Getting Started](docs/getting-started.md)
-- generators/app/templates
-  - [Getting Started](generators/app/templates/README.md)
-- generators/switchboard/templates/docs
-  - [Getting Started](generators/switchboard/templates/docs/getting-started.md)
-- generators/switchboard/templates
-  - [Switchboard Integration](generators/switchboard/templates/README.md)
 
 ## `package.json` scripts
 
@@ -33,4 +25,4 @@ To get started, take a look at the documentation listed below:
 ## License
 
 See [License](./LICENSE)
-© [ns8inc](https://ns8.com)
+!© [Luddites](https://github.com/luddites-me)

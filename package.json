@@ -1,7 +1,7 @@
 {
   "author": {
-    "name": "ns8inc",
-    "url": "https://ns8.com"
+    "name": "Christopher Froehlich",
+    "url": "https://github.com/crfroehlich"
   },
   "dependencies": {
     "chalk": "^4.1.0",
@@ -10,19 +10,19 @@
     "yeoman-generator": "^4.12.0",
     "yosay": "^2.0.2"
   },
-  "description": "Protect integration project generator",
+  "description": "Project generator",
   "devDependencies": {
-    "@ns8/protect-tools-js": "1.0.7",
-    "eslint": "^7.8.1",
+    "@luddites-me/ts-tools": "1.1.0",
+    "eslint": "^7.9.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-xo": "^0.32.1",
     "eslint-plugin-prettier": "^3.1.4",
     "github-release-notes": "^0.17.3",
     "husky": "^4.3.0",
     "jest": "^26.4.2",
-    "lint-staged": "^10.3.0",
-    "prettier": "^2.1.1",
-    "yeoman-assert": "^3.1.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "yeoman-assert": "^3.1.1",
     "yeoman-test": "^3.0.0"
   },
   "engines": {
@@ -48,7 +48,7 @@
   "files": [
     "generators"
   ],
-  "homepage": "https://github.com/ns8inc/generator-protect-integration",
+  "homepage": "https://github.com/luddites-me/generator",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -59,8 +59,8 @@
     "testRegex": "/__tests__/.*"
   },
   "keywords": [
-    "ns8",
-    "protect",
+    "luddites",
+    "scaffolding",
     "yeoman-generator"
   ],
   "lint-staged": {
@@ -73,14 +73,15 @@
       "git add"
     ]
   },
+  "license": "The Unlicense",
   "main": "generators/index.js",
-  "name": "@ns8/generator-protect-integration",
-  "repository": "https://github.com/ns8inc/protect-project-generator",
+  "name": "@luddites-me/generator",
+  "repository": "https://github.com/luddites-me/generator",
   "scripts": {
     "build": "yarn sortJson && yarn docs:standardize",
-    "docs:standardize": "npx ./node_modules/@ns8/protect-tools-js/dist/readme/standardizeReadme.js",
+    "docs:standardize": "npx ./node_modules/@luddites-me/ts-tools/dist/readme/standardizeReadme.js",
     "pretest": "eslint .",
-    "sortJson": "npx ./node_modules/@ns8/protect-tools-js/dist/lint/sortJson.js",
+    "sortJson": "npx ./node_modules/@luddites-me/ts-tools/dist/lint/sortJson.js",
     "test": "jest"
   },
   "scriptsDocumentation": {

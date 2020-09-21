@@ -3,7 +3,7 @@ import {
   BundleMode,
   BundleTarget,
   getWebpackConfig
-} from '@ns8/protect-tools-js';
+} from '@luddites-me/ts-tools';
 
 export default getWebpackConfig({
   bundleTarget: BundleTarget.NODE,
