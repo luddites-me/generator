@@ -20,7 +20,7 @@
     "github-release-notes": "^0.17.3",
     "husky": "^4.3.0",
     "jest": "^26.4.2",
-    "lint-staged": "^10.4.0",
+    "lint-staged": "^12.4.0",
     "prettier": "^2.1.2",
     "yeoman-assert": "^3.1.1",
     "yeoman-test": "^3.0.0"
